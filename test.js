@@ -1,3 +1,2 @@
-const m = [];
-
-console.log(m.map(() => "b"));
+let a = "<div>hsbhvs</div>".replace(/<\/?[^>]+(>|$)/g, "");
+console.log(a);

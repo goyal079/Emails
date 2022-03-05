@@ -1,0 +1,9 @@
+.mail-list {
+  height: 100vh;
+  overflow-y: scroll;
+  flex: 1;
+}
+
+.mail-list::-webkit-scrollbar {
+  display: none;
+}

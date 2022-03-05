@@ -1,17 +1,13 @@
 import React from "react";
 import "./Emailitem.css";
+import { formatDate } from "../helpers";
 const EmailItem = ({ mail }) => {
-  const date = new Date(mail.date);
-  const mailDate = {
-    date: date.getDate(),
-    month: `${date.getMonth() + 1}`.padStart(2, 0),
-    year: date.getFullYear(),
-  };
+  const recieved = formatDate(mail.date);
   return (
     <div className="mail-card">
       <div className="mail-avatar">
         <div className="avatar-text">
-          <span>A</span>
+          <span>{mail.from.name.charAt(0).toUpperCase()}</span>
         </div>
       </div>
       <div className="mail-info">
@@ -24,10 +20,8 @@ const EmailItem = ({ mail }) => {
         <p>
           Subject: <b>{mail.subject}</b>
         </p>
-        <p>{mail.short_description}....</p>
-        <p>
-          {mailDate.date}/{mailDate.month}/{mailDate.year} 10:30 am
-        </p>
+        <p>{mail.short_description.substr(0, 60)}....</p>
+        <p>{recieved}</p>
       </div>
     </div>
   );

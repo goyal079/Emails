@@ -1,11 +1,7 @@
 import Emails from "./Components/Emails";
 
 function App() {
-  return (
-    <div style={{ padding: "13px" }}>
-      <Emails />
-    </div>
-  );
+  return <Emails />;
 }
 
 export default App;
