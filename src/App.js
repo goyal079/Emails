@@ -1,7 +1,11 @@
-import EmailItem from "./Components/EmailItem";
+import Emails from "./Components/Emails";
 
 function App() {
-  return <EmailItem />;
+  return (
+    <div style={{ padding: "13px" }}>
+      <Emails />
+    </div>
+  );
 }
 
 export default App;
