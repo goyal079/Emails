@@ -1,11 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { mailListReducer } from "./reducers/mailReducers";
+import { mailBodyReducer, mailListReducer } from "./reducers/mailReducers";
 
 const initialState = {};
 const reducers = combineReducers({
   mails: mailListReducer,
+  activeMail: mailBodyReducer,
 });
 const middleware = [thunk];
 

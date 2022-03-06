@@ -6,7 +6,6 @@
   display: flex;
   padding: 5px;
   margin: 1em 0;
-  background-color: white;
 }
 .mail-card:hover {
   cursor: pointer;

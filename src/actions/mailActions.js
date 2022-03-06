@@ -3,6 +3,9 @@ import {
   MAIL_LIST_FAILED,
   MAIL_LIST_SUCCESS,
   MAIL_LIST_REQUEST,
+  MAIL_BODY_FAILED,
+  MAIL_BODY_SUCCESS,
+  MAIL_BODY_REQUEST,
   REMOVE_ERROR,
 } from "../types";
 
@@ -19,6 +22,29 @@ export const listMails = (page) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: MAIL_LIST_FAILED,
+      payload: error.response.data.error.message,
+    });
+    setTimeout(() => {
+      dispatch({
+        type: REMOVE_ERROR,
+      });
+    }, 7000);
+  }
+};
+
+export const getMailBody = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: MAIL_BODY_REQUEST });
+    const { data } = await axios.get(
+      `https://flipkart-email-mock.vercel.app/?id=${id}`
+    );
+    dispatch({
+      type: MAIL_BODY_SUCCESS,
+      payload: data.body,
+    });
+  } catch (error) {
+    dispatch({
+      type: MAIL_BODY_FAILED,
       payload: error.response.data.error.message,
     });
     setTimeout(() => {
