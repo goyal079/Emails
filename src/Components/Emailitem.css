@@ -1,11 +1,12 @@
 .mail-card {
   font-size: 14px;
-  height: 100px;
+  height: 110px;
   border-radius: 7px;
   border: 1px solid #cfd2dc;
   display: flex;
   padding: 5px;
   margin: 1em 0;
+  margin-top: 0;
 }
 .mail-card:hover {
   cursor: pointer;
@@ -15,8 +16,18 @@
   flex: 22;
   padding-left: 0.8em;
 }
-.mail-info p {
+.mail-info > p {
   margin: 4px auto;
+}
+.mail-recieved {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+}
+.favorite {
+  color: #ef4065;
+  font-weight: 600;
+  margin: 2px;
 }
 .mail-avatar {
   font-size: 25px;

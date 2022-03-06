@@ -54,3 +54,49 @@ export const getMailBody = (id) => async (dispatch) => {
     }, 7000);
   }
 };
+
+export const readMail = (id) => (dispatch, getState) => {
+  let mails = getState().mails.mailList;
+  const newList = mails.map((mail) => {
+    if (mail.id == id) {
+      mail.read = true;
+    }
+    return mail;
+  });
+  dispatch({
+    type: MAIL_LIST_SUCCESS,
+    payload: newList,
+  });
+};
+
+export const markFavorite = (id) => (dispatch, getState) => {
+  dispatch({ type: MAIL_LIST_REQUEST });
+  let mails = getState().mails.mailList;
+  const newList = mails.map((mail) => {
+    if (mail.id == id) {
+      mail.favorite = true;
+    }
+    return mail;
+  });
+  dispatch({
+    type: MAIL_LIST_SUCCESS,
+    payload: newList,
+  });
+};
+
+export const removeFavorite = (id) => (dispatch, getState) => {
+  dispatch({ type: MAIL_LIST_REQUEST });
+  let mails = getState().mails.mailList;
+  const newList = mails.map((mail) => {
+    if (mail.id == id) {
+      mail.favorite = false;
+    }
+    return mail;
+  });
+  dispatch({
+    type: MAIL_LIST_SUCCESS,
+    payload: newList,
+  });
+};
+
+

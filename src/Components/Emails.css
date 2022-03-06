@@ -3,7 +3,20 @@
   overflow-y: scroll;
   flex: 1;
 }
-
 .mail-list::-webkit-scrollbar {
   display: none;
+}
+
+.filters {
+  margin: 0 10px;
+  font-weight: 500;
+}
+.filters:hover {
+  cursor: pointer;
+}
+header {
+  display: flex;
+  border: 1px solid black;
+  width: 450px;
+  margin-left: 1em;
 }

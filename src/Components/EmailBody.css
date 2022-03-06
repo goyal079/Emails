@@ -6,6 +6,7 @@
   border-radius: 7px;
   flex: 2;
   margin: 1em;
+  margin-top: 0;
 }
 .body-avatar {
   font-size: 25px;
@@ -43,6 +44,7 @@
 }
 .body-header button:hover {
   cursor: pointer;
+  transform: scale(1.025);
 }
 .body-date {
   padding: 5px;

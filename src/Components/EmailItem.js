@@ -3,11 +3,11 @@ import "./Emailitem.css";
 import { formatDate } from "../helpers";
 const EmailItem = ({ mail }) => {
   const recieved = formatDate(mail.date);
+  const bg = mail.read
+    ? { backgroundColor: "#f2f2f2" }
+    : { backgroundColor: "white" };
   return (
-    <div
-      className="mail-card"
-      style={{ backgroundColor: mail.read ? "f2f2f2" : "white" }}
-    >
+    <div className="mail-card" style={bg}>
       <div className="mail-avatar">
         <div className="avatar-text">
           <span>{mail.from.name.charAt(0).toUpperCase()}</span>
@@ -24,7 +24,10 @@ const EmailItem = ({ mail }) => {
           Subject: <b>{mail.subject}</b>
         </p>
         <p>{mail.short_description.substr(0, 50)}....</p>
-        <p>{recieved}</p>
+        <div className="mail-recieved">
+          <p style={{ margin: "2px" }}>{recieved}</p>
+          {mail.favorite && <p className="favorite">Favorite</p>}
+        </div>
       </div>
     </div>
   );
