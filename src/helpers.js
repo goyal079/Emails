@@ -11,4 +11,10 @@ function formatDate(ms) {
     mailDate.hour > 12 ? mailDate.hour - 12 : mailDate.hour
   }:${mailDate.minutes} ${mailDate.hour > 12 ? "pm" : "am"}`;
 }
-export { formatDate };
+const filterStyle = {
+  border: "1px solid #cfd2dc",
+  borderRadius: "20px",
+  color: "#636363",
+  backgroundColor: "#f2f2f2",
+};
+export { formatDate, filterStyle };

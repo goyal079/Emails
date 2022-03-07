@@ -1,7 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { mailBodyReducer, mailListReducer } from "./reducers/mailReducers";
+import {
+  filterMailsReducer,
+  mailBodyReducer,
+  mailListReducer,
+} from "./reducers/mailReducers";
 
 const initialState = {};
 const reducers = combineReducers({

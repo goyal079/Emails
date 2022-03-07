@@ -10,13 +10,27 @@
 .filters {
   margin: 0 10px;
   font-weight: 500;
+  padding: 0 10px;
+  color: black;
 }
 .filters:hover {
   cursor: pointer;
 }
 header {
   display: flex;
-  border: 1px solid black;
   width: 450px;
   margin-left: 1em;
+}
+.empty-list {
+  padding: 10px;
+  display: flex;
+}
+.empty-list > p {
+  color: #e54065;
+  font-weight: 500;
+}
+
+.page-buttons {
+  border: 1px solid #cfd2dc;
+  margin: 10px;
 }

@@ -1,2 +1,3 @@
-let a = [];
-console.log(a == []);
+let a = [1, 1, 15];
+let b = [1, 23, 15, 1, 16, 52];
+let c = [a, "-b"];

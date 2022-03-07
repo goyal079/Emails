@@ -67,6 +67,8 @@ export const readMail = (id) => (dispatch, getState) => {
     type: MAIL_LIST_SUCCESS,
     payload: newList,
   });
+  const readList = newList.filter((mail) => mail.read);
+  localStorage.setItem("readMails", JSON.stringify(readList));
 };
 
 export const markFavorite = (id) => (dispatch, getState) => {
@@ -82,6 +84,9 @@ export const markFavorite = (id) => (dispatch, getState) => {
     type: MAIL_LIST_SUCCESS,
     payload: newList,
   });
+  const favoriteList = newList.filter((mail) => mail.favorite);
+
+  localStorage.setItem("favoriteMails", JSON.stringify(favoriteList));
 };
 
 export const removeFavorite = (id) => (dispatch, getState) => {
@@ -97,6 +102,10 @@ export const removeFavorite = (id) => (dispatch, getState) => {
     type: MAIL_LIST_SUCCESS,
     payload: newList,
   });
+  const favoriteList = newList.filter((mail) => mail.favorite);
+  localStorage.setItem("favoriteMails", JSON.stringify(favoriteList));
 };
-
-
+export const getAllMails = async () => {
+  const { data } = await axios.get("https://flipkart-email-mock.vercel.app/");
+  return data.list;
+};
